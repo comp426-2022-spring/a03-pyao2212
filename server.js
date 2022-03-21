@@ -74,7 +74,9 @@ app.get('/app/flip/', (req, res) => {
 })
 
 app.get('/app/flips/:number([0-9]{1,3})', (req, res) =>{
-    res.status(successStatusCode).json({"raw": coinFlips(req.params.number), "summary": countFlips(flips_arr)});
+    const arrayOfFlips = coinFlips(req.params.number);
+    const counted = countFlips(arrayOfFlips)
+    res.status(successStatusCode).json({"raw": arrayOfFlips, "summary": counted});
 })
 
 app.get('/app/flip/call/:guess(heads|tails)/', (req, res) =>{
