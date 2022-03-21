@@ -62,7 +62,7 @@ function flipACoin(call) {
 
 //Express endpoints
 const successStatusCode = 200;
-const successStatusMessage = "OK"
+const successStatusMessage = "Good"
 
 app.get('/app/', (req, res) => {
     res.status(successStatusCode).end(successStatusCode + ' ' + successStatusMessage );
@@ -84,6 +84,6 @@ app.get('/app/flip/call/:guess(heads|tails)/', (req, res) =>{
 })
 
 app.use(function(req, res){
-    res.status(statusCode).end(404 + ' ' + "NOT FOUND");
+    res.status(404).end(404 + ' ' + "Error not found");
     res.type("text/plain");
 })
