@@ -65,7 +65,6 @@ function flipACoin(call) {
 app.get('/app/', (req, res) => {
   res.contentType('text/plain');
   res.status(200).end(200 + ' ' + "Good" );
-  res.type("text/plain");
 })
 
 app.get('/app/flip/', (req, res) => {
